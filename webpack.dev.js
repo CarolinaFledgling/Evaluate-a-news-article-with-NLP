@@ -6,17 +6,17 @@ const {
 } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
+// const CopyPlugin = require("copy-webpack-plugin");
 
 
 module.exports = {
+    entry: "./src/client/index.js", // our entry file 
+    output: {
+        libraryTarget: 'var',
+        library: 'Client',
+    },
     mode: 'development',
     devtool: 'source-map',
-    entry: "./src/client/index.js", // our entry file 
-    output: { // where to emit and how to to name these files
-        filename: "bundle.min.js",
-        path: path.resolve(__dirname, "./dist")
-    },
     stats: 'verbose',
     module: {
         rules: [{
@@ -62,9 +62,10 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         }),
-        // new MiniCssExtractPlugin({  //if we use images
-        //     filename: "[name].css"
-        // }), new CopyPlugin({
+        new MiniCssExtractPlugin({
+            filename: "[name].css"
+        }),
+        // new CopyPlugin({ //if we use images
         //     patterns: [{
         //         from: "",
         //         to: "./img"
