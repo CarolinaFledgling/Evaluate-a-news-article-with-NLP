@@ -1,6 +1,6 @@
 import {
     checkUrl
-} from './urlChecker'; // jeśli chce to użyć czy to potrzebuje importować ?
+} from './urlChecker'; 
 
 const inputUrl = document.querySelector('.form__url-input');
 const btnSubmit = document.querySelector('.btn-submit')
@@ -11,7 +11,6 @@ const irony = document.querySelector('.result__item--irony')
 const subjectivity = document.querySelector('.result__item--subjectivity')
 const url = "https://api.meaningcloud.com/sentiment-2.1?key=";
 
-//`${url}${API_KEY}&lang=auto&url=""`
 
 
 
@@ -27,7 +26,7 @@ function handleSubmit(event) {
         .then((config) => {
             console.log('APi aa', config)
             //recive data from API 
-            fetch(`${url}${config.key}&lang=auto&url=${urlEnter}`) // jak tutaj sprawdzić url ?
+            fetch(`${url}${config.key}&lang=auto&url=${urlEnter}`) 
                 .then((res) => res.json())
                 .then((res) => {
                     console.log(res)
@@ -40,16 +39,9 @@ function handleSubmit(event) {
                 })
         })
     inputUrl.value = "";
-
-
-
 }
 
-
-
 btnSubmit.addEventListener('click', handleSubmit)
-
-
 
 export {
     handleSubmit
