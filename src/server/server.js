@@ -1,7 +1,4 @@
-// Setup empty JS object to act as endpoint for all routes
-projectData = {};
-
-
+var path = require('path');
 const express = require('express');
 
 // Start up an instance of app
@@ -18,11 +15,18 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-const cors = require('cors') 
+const cors = require('cors')
 app.use(cors());
 
 // Initialize the main project folder
-app.use(express.static('dist')); 
+app.use(express.static('dist'));
+
+// API INFO
+const dotenv = require('dotenv');
+dotenv.config();
+const API_KEY = process.env.API_KEY;
+console.log(`Your API key is ${process.env.API_KEY}`);
+
 
 
 // Setup Server  - 
@@ -35,3 +39,14 @@ function listening() {
     // console.log(server);
     console.log(`running on localhost: ${port}`);
 };
+
+
+
+//send api key to client side
+
+app.get('/api_data', sendApiKey);
+
+function sendApiKey(req, res) {
+    res.send({key: API_KEY})
+    res.send(console.log('hello'))
+}

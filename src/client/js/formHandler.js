@@ -1,18 +1,44 @@
+import {
+    checkUrl
+} from './js/urlChecker';   // jeśli chce to użyć czy to potrzebuje importować ?
+
+const inputUrl = document.querySelector('.form__url-input');
+const btnSubmit = document.querySelector('.btn-submit')
+const btnReset = document.querySelector('.btn-reset')
+const url = "https://api.meaningcloud.com/sentiment-2.1?key=";
+
+//`${url}${API_KEY}&lang=auto&url=""`
+
+
+
+
+
 function handleSubmit(event) {
     event.preventDefault()
+    const urlEnter = inputUrl.value;
 
-    // check what text was put into the form field
-    // let formText = document.getElementById('name').value
-    // checkForName(formText)
+    // receive api key from server side 
 
-    // console.log("::: Form Submitted :::")
-    // fetch('http://localhost:8080/test')
-    // .then(res => res.json())
-    // .then(function(res) {
-    //     document.getElementById('results').innerHTML = res.message
-    // })
+    fetch('http://localhost:3000/api_data')
+        .then((res)=>res.json())
 
-    
+
+
+    fetch(`${url}${API_KEY}&lang=auto&url=""`)// jak tutaj sprawdzić url ?
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res)
+        }).catch((err)=>{
+            console.log(err, 'something went wrong')
+        })
+
+}
+btnSubmit.addEventListener('click', handleSubmit)
+
+
+
+export {
+    handleSubmit
 }
 
-export { handleSubmit }
+
