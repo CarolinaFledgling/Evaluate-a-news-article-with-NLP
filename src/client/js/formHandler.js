@@ -1,6 +1,6 @@
 import {
     checkUrl
-} from './js/urlChecker';   // jeśli chce to użyć czy to potrzebuje importować ?
+} from './urlChecker'; // jeśli chce to użyć czy to potrzebuje importować ?
 
 const inputUrl = document.querySelector('.form__url-input');
 const btnSubmit = document.querySelector('.btn-submit')
@@ -19,20 +19,26 @@ function handleSubmit(event) {
 
     // receive api key from server side 
 
-    fetch('http://localhost:3000/api_data')
-        .then((res)=>res.json())
-
-
-
-    fetch(`${url}${API_KEY}&lang=auto&url=""`)// jak tutaj sprawdzić url ?
+    fetch('/api_data')
         .then((res) => res.json())
-        .then((res) => {
-            console.log(res)
-        }).catch((err)=>{
-            console.log(err, 'something went wrong')
+        .then((config) => {
+            console.log('APi aa', config)
+            fetch(`${url}${config.key}&lang=auto&url=${urlEnter}`) // jak tutaj sprawdzić url ?
+                .then((res) => res.json())
+                .then((res) => {
+                    console.log(res)
+                }).catch((err) => {
+                    console.log(err, 'something went wrong')
+                })
         })
 
+
+
+
 }
+
+
+
 btnSubmit.addEventListener('click', handleSubmit)
 
 
@@ -40,5 +46,3 @@ btnSubmit.addEventListener('click', handleSubmit)
 export {
     handleSubmit
 }
-
-

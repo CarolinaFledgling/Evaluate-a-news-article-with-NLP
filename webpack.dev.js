@@ -12,10 +12,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: "./src/client/index.js", // our entry file 
     output: {
-        // path: path.resolve(__dirname, 'dist'),
-        // filename: 'main.js',
-        libraryTarget: 'var',
-        library: 'Client',
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js',
     },
     mode: 'development',
     devtool: 'source-map',

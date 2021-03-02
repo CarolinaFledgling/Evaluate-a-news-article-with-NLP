@@ -14,7 +14,3 @@ import './styles/reset.scss';
 import './styles/buttons.scss';
 import './styles/result.scss';
 
-export {
-    checkUrl,
-    handleSubmit
-}

@@ -47,6 +47,9 @@ function listening() {
 app.get('/api_data', sendApiKey);
 
 function sendApiKey(req, res) {
-    res.send({key: API_KEY})
+    res.send({
+        key: API_KEY
+    })
     res.send(console.log('hello'))
 }
+
