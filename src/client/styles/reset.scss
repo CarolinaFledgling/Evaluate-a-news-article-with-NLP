@@ -20,6 +20,9 @@ $primary-text-color:#363635;
 body {
     height: 100vh;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 html {
@@ -30,5 +33,6 @@ html {
 
 h1 {
     font-size: 2rem;
-    color: $sunglow;
 }
+
+

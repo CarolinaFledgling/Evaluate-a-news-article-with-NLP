@@ -1,0 +1,29 @@
+// Colors
+
+$sunglow: #FFCB1F;
+$black:#363635;
+$blue:#3F7CAC;
+$white:#FBFCFF;
+
+.btn-submit,
+.btn-reset {
+    padding: 15px 35px;
+    border-radius: 5px;
+    box-shadow: 0px 7px 5px -2px rgba(0, 0, 0, 0.32);
+    font-size: 0.9rem;
+    text-align: center;
+    border: 0px solid transparent;
+    transition: all 0.3s linear;
+}
+
+.btn-reset:hover {
+    background-color: $blue;
+    color: $white;
+    border: 0px solid $blue;
+}
+
+.btn-submit:hover {
+    background-color: $sunglow;
+    color: $black;
+    border: 0px solid $sunglow;
+}

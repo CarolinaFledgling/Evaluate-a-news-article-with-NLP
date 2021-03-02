@@ -19,17 +19,20 @@
         <main>
             <section class="form">
                 <form class="form__details">
-                    <label for="url">Enter url </label>
-                    <input id="url" type="url" class="url-input">
+                    <label class="form__label" for="url">Enter url</label>
+                    <input id="url" type="url" class="form__url-input" placeholder="url">
                 </form>
-                <button class="form__btn-submit">Analyze</button>
+                <div class="form__buttons">
+                    <button class="btn-submit">Analyze</button>
+                    <button class="btn-reset">RESET</button>
+                </div>
             </section>
 
             <section class="result">
                 <h2>RESULT</h2>
                 <ul class="result__list"></ul>
             </section>
-            <button class="btn-reset">RESET</button>
+
         </main>
     </div>
     <footer class="footer" id="footer">

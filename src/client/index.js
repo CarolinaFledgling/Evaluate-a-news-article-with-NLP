@@ -11,3 +11,4 @@ import './styles/footer.scss';
 import './styles/form.scss';
 import './styles/header.scss';
 import './styles/reset.scss';
+import './styles/buttons.scss';
