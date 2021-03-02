@@ -5,33 +5,36 @@
     <meta charset="utf-8">
     <title>Evaluate a News Article with Natural Language Processing</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="header__title">Evaluate a News Article with Natural Language Processing</h1>
+            <p class="header__paragraph">Enter a URL to analyze the sentiment of the page</p>
+        </header>
+        <!-- MAIN SECTION -->
+        <main>
+            <section class="form">
+                <form class="form__details">
+                    <label for="url">Enter url </label>
+                    <input id="url" type="url" class="url-input">
+                </form>
+                <button class="form__btn-submit">Analyze</button>
+            </section>
 
-    <header class="header">
-        <h1 class="header__title">Evaluate a News Article with Natural Language Processing</h1>
-    </header>
-
-    <main>
-        <section>
-            <form class="form" onsubmit="return handleSubmit(event)">
-                <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                <input type="submit" name="" value="submit" onclick="return handleSubmit(event)"
-                    onsubmit="return handleSubmit(event)">
-            </form>
-        </section>
-
-        <section>
-            <strong>Form Results:</strong>
-            <div id="results"></div>
-        </section>
-    </main>
-
+            <section class="result">
+                <h2>RESULT</h2>
+                <ul class="result__list"></ul>
+            </section>
+            <button class="btn-reset">RESET</button>
+        </main>
+    </div>
     <footer class="footer" id="footer">
         <p class="footer__paragraph">
-            &copy Coded by
+            &copy2021 Coded by
             <a href="https://github.com/CarolinaFledgling" class="footer__link">Karolina Kulinska</a>
         </p>
     </footer>

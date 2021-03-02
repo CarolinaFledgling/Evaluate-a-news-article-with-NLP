@@ -1,0 +1,20 @@
+header {
+    width: 800px;
+    text-align: center;
+
+    &__title {  // dlaczego to nie dziala ?
+        margin: 2rem 0
+    }
+
+    &__paragraph {
+        margin: 2rem 0;
+    }
+}
+
+.header__title {
+    margin: 2rem 0;
+}
+
+.header__paragraph {
+    margin: 2rem 0;
+}

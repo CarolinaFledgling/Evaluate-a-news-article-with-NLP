@@ -1,15 +1,34 @@
+// Colors
+
+$sunglow: #FFCB1F;
+$black:#363635;
+$blue:#3F7CAC;
+$white:#FBFCFF;
+
+// Typogrphy colors
+
+$primary-text-color:#363635;
+
+// Basic reset
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: rgb(201, 58, 58);
+body {
+    height: 100vh;
+    text-align: center;
 }
 
-h1{
-    color: red;
+html {
+    font-family: 'Slabo 27px', serif;
+    font-size: 18px;
+    color: $primary-text-color;
+}
+
+h1 {
+    font-size: 2rem;
+    color: $sunglow;
 }
