@@ -15,9 +15,6 @@ const ApiUrl = "https://api.meaningcloud.com/sentiment-2.1?key=";
 
 
 
-
-
-
 function handleSubmit(event) {
     event.preventDefault()
     const urlEnter = inputUrl.value;
@@ -45,7 +42,7 @@ function handleSubmit(event) {
                             console.log(err, 'something went wrong')
                         })
                 } else {
-                    cleanup()
+                    cleanUp()
                     warning.textContent = "Not a valid url format";
                     return false;
                 }
@@ -57,8 +54,8 @@ function handleSubmit(event) {
     warning.textContent = "";
 }
 
-// clean up value when you click btn rest 
-function cleanup() {
+// Clean up value 
+function cleanUp() {
     inputUrl.value = "";
     confidence.innerHTML = "";
     agreement.innerHTML = "";
@@ -67,9 +64,12 @@ function cleanup() {
     warning.textContent = "";
 }
 
+// Event Listener
+
 btnSubmit.addEventListener('click', handleSubmit)
-btnReset.addEventListener('click', cleanup)
+btnReset.addEventListener('click', cleanUp)
 
 export {
-    handleSubmit
+    handleSubmit,
+    cleanUp
 }
