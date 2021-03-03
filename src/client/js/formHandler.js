@@ -35,10 +35,11 @@ function handleSubmit(event) {
                         .then((res) => res.json())
                         .then((res) => {
                             console.log(res)
-                            confidence.innerHTML = ` Confidence : ${res.confidence}`; 
+                            confidence.innerHTML = ` Confidence : ${res.confidence}`;
                             agreement.innerHTML = ` Agreement : ${res.agreement}`;
                             irony.innerHTML = ` Irony : ${res.irony}`;
                             subjectivity.innerHTML = ` Subjectivity : ${res.subjectivity}`;
+                            score.innerHTML = ` Score : ${scoreTag(res.score_tag)}`;
                             langUrl(res.status.code)
                         }).catch((err) => {
                             console.log(err, 'something went wrong')
@@ -83,6 +84,33 @@ function langUrl(langLink) {
 btnSubmit.addEventListener('click', handleSubmit)
 btnReset.addEventListener('click', cleanUp)
 
+
+
+// The possible values are the following:
+
+// P+: strong positive
+// P: positive
+// NEU: neutral
+// N: negative
+// N+: strong negative
+// NONE: without sentiment
+
+const scoreTag = function (score_tag) {
+    if (score_tag === 'P+') {
+        return "Strong Positive"
+    } else if (score_tag === 'P') {
+        return 'Positive'
+    } else if (score_tag === "NEU") {
+        return 'Neutral'
+    } else if (score_tag === "N+") {
+        return 'strong negative'
+    } else if (score_tag === "NONE") {
+        return 'without sentiment'
+    }
+
+}
+
 export {
     handleSubmit,
+    scoreTag,
 }

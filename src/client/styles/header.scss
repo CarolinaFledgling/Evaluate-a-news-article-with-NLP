@@ -2,12 +2,14 @@ header {
     width: 800px;
     text-align: center;
 
-    &__title {  // dlaczego to nie dziala ?
-        margin: 2rem 0
+    &__title {  // why doesn`t work my &?? 
+        margin: 2rem 0;
+        color:green;
     }
 
     &__paragraph {
-        margin: 2rem 0;
+        margin: 1rem 0;
+        color: hotpink;
     }
 }
 
