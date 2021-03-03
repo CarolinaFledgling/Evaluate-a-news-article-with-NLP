@@ -50,6 +50,6 @@ function sendApiKey(req, res) {
     res.send({
         key: API_KEY
     })
-    res.send(console.log('hello'))
+    res.send(console.log('hello I`m your APi Key '))
 }
 
