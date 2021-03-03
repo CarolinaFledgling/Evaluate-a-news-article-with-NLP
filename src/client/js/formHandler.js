@@ -112,5 +112,4 @@ const scoreTag = function (score_tag) {
 
 export {
     handleSubmit,
-    scoreTag,
 }
