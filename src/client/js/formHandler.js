@@ -29,23 +29,32 @@ function handleSubmit(event) {
         fetch('/api_data')
             .then((res) => res.json())
             .then((config) => {
-                //recive data from API 
-                fetch(`${ApiUrl}${config.key}&lang=auto&url=${urlEnter}`)
-                    .then((res) => res.json())
-                    .then((res) => {
-                        console.log(res)
-                        confidence.innerHTML = ` Confidence : ${res.confidence}`;
-                        agreement.innerHTML = ` Agreement : ${res.agreement}`;
-                        irony.innerHTML = ` Irony : ${res.irony}`;
-                        subjectivity.innerHTML = ` Subjectivity : ${res.subjectivity}`;
-                    }).catch((err) => {
-                        console.log(err, 'something went wrong')
-                    })
+
+                //check if url is correct
+                if (checkUrl(urlEnter)) {
+                    //recive data from API 
+                    fetch(`${ApiUrl}${config.key}&lang=auto&url=${urlEnter}`)
+                        .then((res) => res.json())
+                        .then((res) => {
+                            console.log(res)
+                            confidence.innerHTML = ` Confidence : ${res.confidence}`;
+                            agreement.innerHTML = ` Agreement : ${res.agreement}`;
+                            irony.innerHTML = ` Irony : ${res.irony}`;
+                            subjectivity.innerHTML = ` Subjectivity : ${res.subjectivity}`;
+                        }).catch((err) => {
+                            console.log(err, 'something went wrong')
+                        })
+                } else {
+                    cleanup()
+                    warning.textContent = "Not a valid url format";
+                    return false;
+                }
+
             })
 
     }
 
-
+    warning.textContent = "";
 }
 
 // clean up value when you click btn rest 

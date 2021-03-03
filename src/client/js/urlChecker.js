@@ -7,8 +7,9 @@ function checkUrl(urlText) {
         '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
         '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
         '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
-    return !!pattern.test(urlText);
-}
+    return !!pattern.test(urlText); 
+    // zapytac sie po co te !! wykrzykniki ???
+} 
 
 export {
     checkUrl
