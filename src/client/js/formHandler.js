@@ -110,15 +110,8 @@ const scoreTag = function (score_tag) {
 
 }
 
-// some function for TEST in JEST 
-
-function sayHi(name) {
-    console.log(`Hi ${name}`)
-}
-
-sayHi()
 
 export {
     handleSubmit,
-    sayHi
+
 }
