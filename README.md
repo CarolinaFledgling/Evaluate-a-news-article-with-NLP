@@ -11,6 +11,19 @@ The goal of this project is to practice:
 * Using APIs and creating requests to external URLs
 
 
+## Getting started
+Clone or fork the project, you will still need to install everything:
+
+cd into your new folder and run:
+
+`npm install` 
+`npm run start` 
+
+## Setting up the API
+
+You will need to go  [here](https://www.meaningcloud.com/)
+Signing up will get you an API key
+
 
 
 
