@@ -10,6 +10,7 @@ const agreement = document.querySelector('.result__item--agreement')
 const irony = document.querySelector('.result__item--irony')
 const subjectivity = document.querySelector('.result__item--subjectivity')
 const warning = document.querySelector('.result__warning')
+const score = document.querySelector('.result__item--score')
 
 const ApiUrl = "https://api.meaningcloud.com/sentiment-2.1?key=";
 
@@ -34,10 +35,11 @@ function handleSubmit(event) {
                         .then((res) => res.json())
                         .then((res) => {
                             console.log(res)
-                            confidence.innerHTML = ` Confidence : ${res.confidence}`;
+                            confidence.innerHTML = ` Confidence : ${res.confidence}`; 
                             agreement.innerHTML = ` Agreement : ${res.agreement}`;
                             irony.innerHTML = ` Irony : ${res.irony}`;
                             subjectivity.innerHTML = ` Subjectivity : ${res.subjectivity}`;
+                            langUrl(res.status.code)
                         }).catch((err) => {
                             console.log(err, 'something went wrong')
                         })
@@ -64,6 +66,18 @@ function cleanUp() {
     warning.textContent = "";
 }
 
+// if there is no english url 
+
+function langUrl(langLink) {
+    if (langLink === '105') {
+        cleanUp()
+        warning.textContent = "Not a English url website";
+        return false;
+    } else {
+        return true;
+    }
+}
+
 // Event Listener
 
 btnSubmit.addEventListener('click', handleSubmit)
@@ -71,5 +85,4 @@ btnReset.addEventListener('click', cleanUp)
 
 export {
     handleSubmit,
-    cleanUp
 }
