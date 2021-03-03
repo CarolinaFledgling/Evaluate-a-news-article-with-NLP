@@ -1,8 +1,8 @@
 // import checkUrl from '../src/client/js/urlChecker';
-const checkUrl = require('../src/client/js/urlChecker')
+const sayHi = require('../src/client/js/urlChecker')
 
 
-    test('ensure checkUrl function exists', () => {
-        expect(checkUrl).toBeDefined();
-    
-    })
+test('ensure sayHi function exists', () => {
+    expect(sayHi).toBeDefined();
+
+})
