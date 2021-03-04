@@ -18,11 +18,12 @@ cd into your new folder and run:
 
 `npm install` 
 `npm run start` 
+ go to http://localhost:3000/
 
 ## Setting up the API
 
 You will need to go  [here](https://www.meaningcloud.com/)
-Signing up will get you an API key
+Signing up will get you an API key and in .env file matching api keys in server.js
 
 
 
