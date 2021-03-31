@@ -3,11 +3,12 @@
 ## Description 
 The goal of this project is to practice:
 
+* Vanilla JS (Asynchronous)
 * Setting up Webpack
 * Sass styles
 * Webpack Loaders and Plugins
 * Creating layouts and page design
-* Service workers
+* Setup localhost server
 * Using APIs and creating requests to external URLs
 
 
